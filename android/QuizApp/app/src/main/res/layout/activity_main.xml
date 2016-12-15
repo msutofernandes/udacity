@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
-        android:text="Vamos descobrir se você está levando uma vida saudável?"
+        android:text="@string/greeting1"
         android:textSize="20sp" />
 
     <TextView
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
-        android:text="Insira seu nome abaixo e vamos começar!"
+        android:text="@string/greeting2"
         android:textSize="20sp" />
 
     <EditText
@@ -41,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Começar"
+        android:text="@string/button1"
         android:textSize="15sp"
         android:id="@+id/botao_comecar"
         android:onClick="iniciarQuiz"/>

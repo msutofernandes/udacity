@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">QuizApp</string>
+    <string name="greeting1">Vamos descobrir se você é bom em matemática?</string>
+    <string name="greeting2">Insira seu nome abaixo e vamos começar!</string>
+    <string name="button1">Começar</string>
+    <string name="button2">Ver Resultado</string>
+    <string name="hint1">Começa com a letra D</string>
+    <string name="hint2">Começa com a letra M</string>
+    <string name="question1">1) Quanto é 9 x 7?</string>
+    <string name="question2">2) Quanto é 105 / 5?</string>
+    <string name="question3">3) Quais desses números são números primos?</string>
+    <string name="question4">4) Quais desses números são números ímpares?</string>
+    <string name="question5">5) Qual o nome dessa operação aritmética ÷ ?</string>
+    <string name="question6">6) Qual o nome dessa operação aritmética ×?</string>
 </resources>

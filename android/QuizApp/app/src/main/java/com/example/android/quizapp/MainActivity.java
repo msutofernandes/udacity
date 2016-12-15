@@ -8,7 +8,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    String name = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
