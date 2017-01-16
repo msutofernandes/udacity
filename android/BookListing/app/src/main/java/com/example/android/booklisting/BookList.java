@@ -41,7 +41,7 @@ public class BookList extends AppCompatActivity {
 
     }
 
-    public class GetBooks extends AsyncTask<URL, ArrayList, ArrayList> {
+    public class GetBooks extends AsyncTask<URL, Void, ArrayList> {
 
         @Override
         public ArrayList<Book> doInBackground(URL... urls) {
@@ -50,6 +50,7 @@ public class BookList extends AppCompatActivity {
             String str = intent.getStringExtra("keyword");
             String urlPlusKeyword = requestUrl + str + maxResults;
             URL url = createUrl(urlPlusKeyword);
+
 
             // Perform HTTP request to the URL and receive a JSON response back
             try {
@@ -83,11 +84,17 @@ public class BookList extends AppCompatActivity {
 
                         // Extract out the title and author values
                         String title = volumeInfo.getString("title");
-                        JSONArray authors = volumeInfo.getJSONArray("authors");
-                        String author = authors.getString(firstAuthor);
 
-                        Book list = new Book(title, author);
+                        if (volumeInfo.has("authors")) {
+                            JSONArray authors = volumeInfo.getJSONArray("authors");
+                            String author = authors.getString(firstAuthor);
+                            Book list = new Book(title, author);
+                            booklist.add(list);
+                        }
+
+                        Book list = new Book(title, "No author available");
                         booklist.add(list);
+
                     }
                 }
             } catch (JSONException e) {

@@ -1,5 +1,6 @@
 package com.example.android.booklisting;
 
+import android.app.Activity;
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -15,7 +16,7 @@ import java.nio.charset.Charset;
  * Created by msuto on 08/01/2017.
  */
 
-public class HttpConnection {
+public class HttpConnection extends Activity {
 
     public static final String LOG_TAG = MainActivity.class.getSimpleName();
 
@@ -53,6 +54,7 @@ public class HttpConnection {
                 inputStream.close();
             }
         }
+
         return jsonResponse;
     }
 

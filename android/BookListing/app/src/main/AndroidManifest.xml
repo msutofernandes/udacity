@@ -18,6 +18,7 @@
 
         <activity
             android:name=".BookList"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:label="Book List">
         </activity>
 
