@@ -7,18 +7,20 @@ package com.example.android.booklisting;
 public class Book {
 
     public String title;
-    public String publisher;
+    public String author;
 
-    public Book(String bookTitle, String bookPublisher) {
+
+    public Book(String bookTitle, String bookAuthor) {
         title = bookTitle;
-        publisher = bookPublisher;
+        author = bookAuthor;
     }
 
     public String getTile() {
         return title;
     }
 
-    public String getPublisher() {
-        return publisher;
+    public String getAuthor() {
+        return author;
     }
+
 }

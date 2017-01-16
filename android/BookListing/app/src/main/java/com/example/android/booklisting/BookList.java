@@ -17,7 +17,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
-import static com.example.android.booklisting.HttpConnection.LOG_TAG;
 import static com.example.android.booklisting.HttpConnection.makeHttpRequest;
 
 /**
@@ -27,33 +26,26 @@ import static com.example.android.booklisting.HttpConnection.makeHttpRequest;
 public class BookList extends AppCompatActivity {
 
     private String TAG = MainActivity.class.getSimpleName();
-    private ListView lv;
 
     // URL to get contacts JSON
     private static String requestUrl = "https://www.googleapis.com/books/v1/volumes?q=";
-    private static String maxResults = "&maxResults=5";
+    private static String maxResults = "&maxResults=15";
     private static String jsonResponse = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_item);
+        setContentView(R.layout.books_activity);
 
         new GetBooks().execute();
 
-        final ArrayList<Book> booklist = extractBooks();
-
-        BookAdapater itemAdapter = new BookAdapater(this, booklist);
-
-        ListView listView = (ListView) findViewById(R.id.list);
-        listView.setAdapter(itemAdapter);
     }
 
-    public class GetBooks extends AsyncTask<URL, Void, Void> {
+    public class GetBooks extends AsyncTask<URL, ArrayList, ArrayList> {
 
         @Override
-        public Void doInBackground(URL... urls) {
-            // Create URL object concatenating the keyword + max results = 10
+        public ArrayList<Book> doInBackground(URL... urls) {
+            // Create URL object concatenating the keyword + max results = 15
             Intent intent = getIntent();
             String str = intent.getStringExtra("keyword");
             String urlPlusKeyword = requestUrl + str + maxResults;
@@ -63,59 +55,75 @@ public class BookList extends AppCompatActivity {
             try {
                 jsonResponse = makeHttpRequest(url);
             } catch (IOException e) {
-                Log.e(LOG_TAG, "Error trying to make Http request");
+                Log.e(TAG, "HTTP request error");
             }
-            return null;
+
+            final ArrayList<Book> booklist = new ArrayList<>();
+
+            try {
+
+                JSONObject jsonObject = new JSONObject(jsonResponse);
+
+                if (TextUtils.isEmpty(jsonResponse)) {
+                    return null;
+                }
+
+                JSONArray itemsArray = jsonObject.getJSONArray("items");
+
+                // If there are results in the features array
+                if (itemsArray.length() > 0) {
+
+                    for (int i = 0; i < itemsArray.length(); i++) {
+
+                        int firstAuthor = 0;
+
+                        // Extract out the first feature volumeInfo
+                        JSONObject currentBook = itemsArray.getJSONObject(i);
+                        JSONObject volumeInfo = currentBook.getJSONObject("volumeInfo");
+
+                        // Extract out the title and author values
+                        String title = volumeInfo.getString("title");
+                        JSONArray authors = volumeInfo.getJSONArray("authors");
+                        String author = authors.getString(firstAuthor);
+
+                        Book list = new Book(title, author);
+                        booklist.add(list);
+                    }
+                }
+            } catch (JSONException e) {
+                Log.e(TAG, "Problem parsing JSON results", e);
+                booklist.add(null);
+            }
+            return booklist;
         }
 
-}
+        @Override
+        protected void onPostExecute(ArrayList booklist) {
+            if (booklist.size() <= 1) {
 
-    public static ArrayList<Book> extractBooks() {
+                ListView listView = (ListView) findViewById(R.id.list);
+                listView.setEmptyView(findViewById(R.id.empty_list));
 
-        ArrayList<Book> booklist = new ArrayList<>();
+            } else {
 
-        try {
+                BookAdapater itemAdapter = new BookAdapater(BookList.this, booklist);
+                itemAdapter.addAll(booklist);
 
-            JSONObject jsonObject = new JSONObject(jsonResponse);
+                ListView listView = (ListView) findViewById(R.id.list);
+                listView.setAdapter(itemAdapter);
 
-            if (TextUtils.isEmpty(jsonResponse)){
+            }
+        }
+
+        private URL createUrl(String stringUrl) {
+            URL url = null;
+            try {
+                url = new URL(stringUrl);
+            } catch (MalformedURLException exception) {
+                Log.e(TAG, "Error with creating URL", exception);
                 return null;
             }
-
-            JSONArray itemsArray = jsonObject.getJSONArray("items");
-
-            // If there are results in the features array
-            if (itemsArray.length() > 0) {
-
-                for (int i = 0; i < itemsArray.length(); i++) {
-
-                    // Extract out the first feature volumeInfo
-                    JSONObject currentBook = itemsArray.getJSONObject(i);
-                    JSONObject volumeInfo = currentBook.getJSONObject("volumeInfo");
-
-                    // Extract out the title and publisher values
-                    String title = volumeInfo.getString("title");
-                    String publisher = volumeInfo.getString("publisher");
-
-                    Book list = new Book(title, publisher);
-                    booklist.add(list);
-                }
-            }
-        } catch (JSONException e) {
-            Log.e(LOG_TAG, "Problem parsing JSON results", e);
+            return url;
         }
-        return null;
-    }
-
-
-    private URL createUrl(String stringUrl) {
-        URL url = null;
-        try {
-            url = new URL(stringUrl);
-        } catch (MalformedURLException exception) {
-            Log.e(LOG_TAG, "Error with creating URL", exception);
-            return null;
-        }
-        return url;
     }
 }

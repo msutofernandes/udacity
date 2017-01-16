@@ -1,13 +1,13 @@
 package com.example.android.booklisting;
 
-import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by msuto on 07/01/2017.
@@ -15,8 +15,8 @@ import java.util.ArrayList;
 
 public class BookAdapater extends ArrayAdapter<Book> {
 
-    public BookAdapater(Activity context, ArrayList<Book> items) {
-        super(context, 0, items);
+    public BookAdapater(Context context, List<Book> booklist) {
+        super(context, 0, booklist);
     }
 
     @Override
@@ -32,8 +32,8 @@ public class BookAdapater extends ArrayAdapter<Book> {
         TextView titleTextView = (TextView) listItemView.findViewById(R.id.book_title);
         titleTextView.setText(currentItem.getTile());
 
-        TextView publisherTextView = (TextView) listItemView.findViewById(R.id.book_publisher);
-        publisherTextView.setText(currentItem.getPublisher());
+        TextView authorTextView = (TextView) listItemView.findViewById(R.id.book_author);
+        authorTextView.setText(currentItem.getAuthor());
 
         return listItemView;
 

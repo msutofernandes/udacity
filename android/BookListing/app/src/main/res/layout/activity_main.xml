@@ -11,15 +11,27 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.android.booklisting.MainActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="14dp"
+        android:textSize="20dp"
+        android:gravity="center_horizontal"
+        android:text="Welcome to BookListing App!" />
+
     <EditText
         android:id="@+id/keyword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Keyword" />
+        android:gravity="center_horizontal"
+        android:hint="Search any books here"
+        />
 
     <Button
+        android:layout_marginTop="14dp"
+        android:gravity="center_horizontal"
         android:id="@+id/search_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Search" />
 </LinearLayout>
