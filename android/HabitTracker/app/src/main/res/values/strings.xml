@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HabitTracker</string>
+    <string name="cat_study">Study</string>
+    <string name="cat_exercise">Exercise</string>
+    <string name="cat_eat">Eat</string>
+    <string name="cat_budget">Budget</string>
+    <string name="cat_sleep">Sleep</string>
+    <string name="save">Save</string>
+</resources>
