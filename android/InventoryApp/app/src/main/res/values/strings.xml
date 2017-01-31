@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Inventory App</string>
+    <string name="title_new_product">New Product</string>
+    <string name="title_edit_product">Edit Product</string>
+    <string name="editor_insert_product_failed">Error saving product</string>
+    <string name="editor_insert_product_successful">Product saved</string>
+    <string name="editor_update_product_failed">Error updating product</string>
+    <string name="editor_update_product_successful">Product updated</string>
+    <string name="editor_delete_product_failed">Error deleting product</string>
+    <string name="editor_delete_product_successful">Product deleted</string>
+    <string name="action_save">Save</string>
+    <string name="action_delete">Delete</string>
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+    <string name="discard">Discard</string>
+    <string name="keep_editing">Keep Editing</string>
+    <string name="delete_dialog_msg">Delete this product?</string>
+    <string name="delete">Delete</string>
+    <string name="sale">Sale</string>
+    <string name="cancel">Cancel</string>
+    <string name="no_products">No products to show. To add a new product, click on the
+        + button.</string>
+</resources>
