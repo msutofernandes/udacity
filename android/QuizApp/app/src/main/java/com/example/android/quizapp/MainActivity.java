@@ -15,8 +15,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void iniciarQuiz(View view)
-    {
+    public void iniciarQuiz(View view){
+
         TextView nome = (TextView) findViewById(R.id.nome);
         String name = nome.getText().toString();
         if (name != null  && !name.isEmpty()) {
