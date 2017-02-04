@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_musics"
+    style="@style/LinearDefault"
+    tools:context="com.example.android.musicapp.MusicsActivity">
+
+    <TextView
+        style="@style/DescriptionStyle"
+        android:text="All your favorite musics" />
+
+    <TextView
+        style="@style/ListStyle"
+        android:text="Energy - Drake" />
+
+    <TextView
+        style="@style/ListStyle"
+        android:text="Money Trees - Kendrick Lamar" />
+
+    <TextView
+        style="@style/ListStyle"
+        android:text="Famous - Kanye West" />
+
+    <TextView
+        style="@style/ListStyle"
+        android:text="Antidote - Travi$ Scott" />
+
+    <TextView
+        style="@style/ListStyle"
+        android:text="Wicked Future" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="0dp"
+        tools:context="com.example.piotr.myapplication.MainActivity">
+
+        <LinearLayout style="@style/LinearIcons">
+
+            <ImageView
+                android:id="@+id/playlist_icon"
+                style="@style/Icons"
+                android:src="@drawable/playlist" />
+
+            <ImageView
+                android:id="@+id/artists_icon"
+                style="@style/Icons"
+                android:src="@drawable/artist" />
+
+            <ImageView
+                android:id="@+id/albums_icon"
+                style="@style/Icons"
+                android:src="@drawable/albums" />
+
+            <ImageView
+                android:id="@+id/musics_icon"
+                style="@style/Icons"
+                android:src="@drawable/musics" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
+

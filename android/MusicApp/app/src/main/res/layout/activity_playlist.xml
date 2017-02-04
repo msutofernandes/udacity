@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_playlist"
+    style="@style/LinearDefault"
+    tools:context="com.example.android.musicapp.PlaylistActivity">
+
+    <TextView
+        style="@style/DescriptionStyle"
+        android:text="Playlists created by you or your friends" />
+
+    <TextView
+        style="@style/ListStyle"
+        android:text="Rap Caviar" />
+
+    <TextView
+        style="@style/ListStyle"
+        android:text="Hip-Hop 2016" />
+
+    <TextView
+        style="@style/ListStyle"
+        android:text="The Best Ever" />
+
+    <TextView
+        style="@style/ListStyle"
+        android:text="Brazilian Music" />
+
+    <TextView
+        style="@style/ListStyle"
+        android:text="Greatest Hits 2017" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.piotr.myapplication.MainActivity">
+
+        <LinearLayout style="@style/LinearIcons">
+
+            <ImageView
+                android:id="@+id/playlist_icon"
+                style="@style/Icons"
+                android:src="@drawable/playlist" />
+
+            <ImageView
+                android:id="@+id/artists_icon"
+                style="@style/Icons"
+                android:src="@drawable/artist" />
+
+            <ImageView
+                android:id="@+id/albums_icon"
+                style="@style/Icons"
+                android:src="@drawable/albums" />
+
+            <ImageView
+                android:id="@+id/musics_icon"
+                style="@style/Icons"
+                android:src="@drawable/musics" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

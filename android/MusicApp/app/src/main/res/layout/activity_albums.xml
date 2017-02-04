@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_albums"
+    style="@style/LinearDefault"
+    tools:context="com.example.android.musicapp.AlbumsActivity">
+
+    <TextView
+        style="@style/DescriptionStyle"
+        android:text="All your favorites albums" />
+
+    <TextView
+        style="@style/ListStyle"
+        android:text="Paper Trail - T.I." />
+
+    <TextView
+        style="@style/ListStyle"
+        android:text="Watch The Trone - JAY Z" />
+
+    <TextView
+        style="@style/ListStyle"
+        android:text="Views - Drake" />
+
+    <TextView
+        style="@style/ListStyle"
+        android:text="ANTI - Rihanna" />
+
+    <TextView
+        style="@style/ListStyle"
+        android:text="Meteora - Linkin Park" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="0dp"
+        tools:context="com.example.piotr.myapplication.MainActivity">
+
+        <LinearLayout style="@style/LinearIcons">
+
+            <ImageView
+                android:id="@+id/playlist_icon"
+                style="@style/Icons"
+                android:src="@drawable/playlist" />
+
+            <ImageView
+                android:id="@+id/artists_icon"
+                style="@style/Icons"
+                android:src="@drawable/artist" />
+
+            <ImageView
+                android:id="@+id/albums_icon"
+                style="@style/Icons"
+                android:src="@drawable/albums" />
+
+            <ImageView
+                android:id="@+id/musics_icon"
+                style="@style/Icons"
+                android:src="@drawable/musics" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
+
+

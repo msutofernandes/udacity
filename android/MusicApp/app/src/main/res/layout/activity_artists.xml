@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_artists"
+    style="@style/LinearDefault"
+    tools:context="com.example.android.musicapp.ArtistsActivity">
+
+    <TextView
+        style="@style/DescriptionStyle"
+        android:text="It shows all the artists of your library" />
+
+    <TextView
+        style="@style/ListStyle"
+        android:text="Drake" />
+
+    <TextView
+        style="@style/ListStyle"
+        android:text="JAY Z" />
+
+    <TextView
+        style="@style/ListStyle"
+        android:text="Kanye West" />
+
+    <TextView
+        style="@style/ListStyle"
+        android:text="Linkin Park" />
+
+    <TextView
+        style="@style/ListStyle"
+        android:text="Foo Fighters" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="0dp"
+        tools:context="com.example.piotr.myapplication.MainActivity">
+
+        <LinearLayout style="@style/LinearIcons">
+
+            <ImageView
+                android:id="@+id/playlist_icon"
+                style="@style/Icons"
+                android:src="@drawable/playlist" />
+
+            <ImageView
+                android:id="@+id/artists_icon"
+                style="@style/Icons"
+                android:src="@drawable/artist" />
+
+            <ImageView
+                android:id="@+id/albums_icon"
+                style="@style/Icons"
+                android:src="@drawable/albums" />
+
+            <ImageView
+                android:id="@+id/musics_icon"
+                style="@style/Icons"
+                android:src="@drawable/musics" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
+
