@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:id="@+id/activity_pergunta1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        tools:context="com.example.android.quizapp.Pergunta1">
+        android:padding="16dp"
+        tools:context="com.example.android.quizapp.Questions">
 
         <TextView
+            style="@style/PerguntasStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/question1"
-            style="@style/PerguntasStyle"/>
+            android:text="@string/question1" />
 
         <RadioGroup
             android:layout_width="match_parent"
@@ -55,10 +53,10 @@
         </RadioGroup>
 
         <TextView
+            style="@style/PerguntasStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/question2"
-            style="@style/PerguntasStyle" />
+            android:text="@string/question2" />
 
         <RadioGroup
             android:layout_width="match_parent"
@@ -86,10 +84,10 @@
         </RadioGroup>
 
         <TextView
+            style="@style/PerguntasStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/question3"
-            style="@style/PerguntasStyle" />
+            android:text="@string/question3" />
 
         <RadioGroup
             android:layout_width="match_parent"
@@ -134,10 +132,10 @@
         </RadioGroup>
 
         <TextView
+            style="@style/PerguntasStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/question4"
-            style="@style/PerguntasStyle" />
+            android:text="@string/question4" />
 
         <RadioGroup
             android:layout_width="match_parent"
@@ -182,26 +180,26 @@
         </RadioGroup>
 
         <TextView
+            style="@style/PerguntasStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/question5"
-            style="@style/PerguntasStyle"/>
+            android:text="@string/question5" />
 
-            <EditText
-                android:id="@+id/resp5_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:hint="@string/hint1"
-                android:maxLines="1"
-                android:textSize="16sp" />
+        <EditText
+            android:id="@+id/resp5_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:hint="@string/hint1"
+            android:maxLines="1"
+            android:textSize="16sp" />
 
         <TextView
+            style="@style/PerguntasStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/question6"
-            style="@style/PerguntasStyle" />
+            android:text="@string/question6" />
 
         <EditText
             android:id="@+id/resp6_1"
@@ -218,15 +216,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/button2"
-            android:onClick="mostraResultado"/>
+            android:onClick="mostraResultado"
+            android:text="@string/button2" />
 
         <TextView
+            android:id="@+id/resultado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/resultado"
             android:layout_marginTop="16dp"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
     </LinearLayout>
-</ScrollView>
+</LinearLayout>

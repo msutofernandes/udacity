@@ -8,17 +8,17 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-public class Pergunta1 extends AppCompatActivity {
+public class Questions extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pergunta1);
+        setContentView(R.layout.activity_questions);
     }
 
     public void mostraResultado(View view) {
         int pontuacao = somaPontos();
-        montaResultado("Pontuação: " + pontuacao +"/6");
+        montaResultado("Points: " + pontuacao +"/6");
     }
 
     public void montaResultado(String message) {
@@ -54,12 +54,12 @@ public class Pergunta1 extends AppCompatActivity {
         }
         EditText text1 = (EditText) findViewById(R.id.resp5_1);
         String resposta1 = text1.getText().toString();
-        if (resposta1.equals("Divisão")) {
+        if (resposta1.equals("Division")) {
             points = points + 1;
         }
         EditText text2 = (EditText) findViewById(R.id.resp6_1);
         String resposta2 = text2.getText().toString();
-        if (resposta2.equals("Multiplicação")) {
+        if (resposta2.equals("Multiplication")) {
             points = points + 1;
         }
         return points;

@@ -20,10 +20,10 @@ public class MainActivity extends AppCompatActivity {
         TextView nome = (TextView) findViewById(R.id.nome);
         String name = nome.getText().toString();
         if (name != null  && !name.isEmpty()) {
-        Intent intent = new Intent(MainActivity.this, Pergunta1.class);
+        Intent intent = new Intent(MainActivity.this, Questions.class);
             startActivity(intent);
         } else {
-            Toast.makeText(this, "Preencha o seu nome para começar", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Fill out your name to start", Toast.LENGTH_SHORT).show();
         }
     }
 }
